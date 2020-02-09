@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unicorn Ranch</title>
+</head>
+<body>
+  <h1>Welcome to Unicorn Ranch</h1>
+  <div>
+  <ul>
+    <% for (let unicorn of unicorns){ %>
+    <ol>
+      <li><%=unicorn.name%></li>
+      <li><%=unicorn.color%></li>
+      <li><%=unicorn.favorite_food%></li>
+      <li><select name="location">
+        <%- ['pasture','barn','besides the river']. map (value => {
+             let selected = (unicorn.location === value)?'selected':' ';
+            return `<option value=${value} ${selected}>${value}</option>`;
+            });
+        %>
+        
+      </select></li>
+    </ol>
+    <br>
+    <br>
+    <% } %>
+  </ul>
+
+  </div>
+
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+[
+  {
+    "name": "unicorn A",
+    "color": "purple",
+    "favorite_food": "apple",
+    "location": "barn"
+  },
+  {
+    "name": "unicorn B",
+    "color": "orange",
+    "favorite_food": "banana",
+    "location": "pasture"
+  },
+  {"name": "unicorn C",
+    "color": "white",
+    "favorite_food": "pizza",
+    "location": "besider the river"
+  }
+]
