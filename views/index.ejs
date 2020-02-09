@@ -2,34 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css">
   <title>Unicorn Ranch</title>
 </head>
 <body>
-  <h1>Welcome to Unicorn Ranch</h1>
-  <div>
-  <ul>
-    <% for (let unicorn of unicorns){ %>
-    <ol>
-      <li><%=unicorn.name%></li>
-      <li><%=unicorn.color%></li>
-      <li><%=unicorn.favorite_food%></li>
-      <li><select name="location">
-        <%- ['pasture','barn','besides the river']. map (value => {
-             let selected = (unicorn.location === value)?'selected':' ';
-            return `<option value=${value} ${selected}>${value}</option>`;
-            });
-        %>
-        
-      </select></li>
-    </ol>
-    <br>
-    <br>
-    <% } %>
-  </ul>
-
+  <div class="grid-container">
+    <div class="header">
+      Welcome to Unicorn Ranch
+    </div>
+    <div class="row">
+      <% for (let unicorn of unicorns){ %>
+        <div class="column">
+          <div class="name"><%=unicorn.name%></div>
+          <div class="property">COLOR: </div>
+          <div class="value"><%=unicorn.color%></div>
+          <div class="property">FAVORITE FOOD: </div>
+          <div class="value"><%=unicorn.favorite_food%></div>
+          <div class="property">LOCATION: </div>
+            <select id='<%=`${unicorn.id}`%>' class='location value'>
+              <%- locations.map(value => {
+                let selected = (unicorn.location === value) ? 'selected' : '';
+                return `<option value='${value}' ${selected}>${value}</option>`;
+                }).join(' ');
+              %>
+            </select>
+          <div id="updated_<%=`${unicorn.id}`%>" class="updated">&nbsp;</div>
+        </div>
+      <% } %>
+    </div>
   </div>
-
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="/app.js"></script>
 </body>
 </html>
