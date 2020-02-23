@@ -20,4 +20,9 @@ function sendLocation(event) {
     });
 }
 
+function refresh() {
+  window.location.reload(true);
+}
+
 setEventListeners();
+setInterval ('refresh()', 10000);
