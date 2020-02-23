@@ -1,0 +1,27 @@
+{
+  "name": "unicorn-ranch",
+  "version": "1.0.0",
+  "description": "A client/server web application for a unicorn ranch, to keep track of and update the locations of unicorns.",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XiaojuanCai/unicorn.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/XiaojuanCai/unicorn/issues"
+  },
+  "homepage": "https://github.com/XiaojuanCai/unicorn#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1"
+  }
+}

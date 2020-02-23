@@ -1,62 +1,44 @@
-.grid-container{
-  width: 100%; 
-  max-width: 960px; 
-  margin:0 auto;
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #111111;
+  font-size: 16px;
+}
+
+div.grid_4 {
+  background-color: #eeeeee;
+  margin-bottom: 20px;
 }
 
 .header {
-  font-family: sans-serif;
-  font-size: 40px;
+  font-size: 220%;
   font-weight: bold;
-  color: darkblue;
-  background-color: #F1F1F1;
   text-align: center;
   padding: 40px;
 }
 
-.column {
-  float: left;
-  background-color:  #F1F1F1;
-  width: 45%;
-  padding: 15px;
-  margin: 10px auto;
-  margin-left: 10px;
+div.unicorn {
+  display:grid;
+  grid-template-columns: max-content max-content;
+  grid-gap:5px;
+  padding: 16px 0px 5px 10px;
 }
 
-.row:before, .row:after {
-  content: "";
-  width:100%;
-  display: table;
-  clear: both;
+div.unicorn label { 
+  text-align:right; 
+}
+div.unicorn label:after { 
+  content: ": "; 
 }
 
-.name{
-  font-family: sans-serif;
-  font-size: 36px;
+.location{
+  font-size: 100%;
+}
+.unicorn_name{
+  font-size: 150%;
   font-weight: bold;
-  color: gray;
-  padding: 10px;
 }
 
-.property{
-  font-family: sans-serif;
-  text-align: left;
-  float: left;
-  font-size: 20px;
-  color: cornflowerblue;
-  padding: 5px;
-}
-
-.value{
-  font-family: sans-serif;
-  font-size: 20px;
-  color: darkblue;
-  padding: 5px;
-}
-
-.updated{
+.comments{
   font-style: italic;
-  color: green;
-  font-size: 15px;
-  padding: 5px;
+  font-size: 60%;
 }
