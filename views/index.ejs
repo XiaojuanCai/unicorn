@@ -3,30 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/960_12_col.css">
   <title>Unicorn Ranch</title>
 </head>
 <body>
-  <div class="grid-container">
+  <div class="container_12">
     <div class="header">
       Welcome to Unicorn Ranch
     </div>
-    <div class="row">
       <% for (let unicorn of unicorns){ %>
-        <div class="column">
-          <div class="name"><%=unicorn.name%></div>
-          <div class="property">COLOR: </div>
-          <div class="value"><%=unicorn.color%></div>
-          <div class="property">FAVORITE FOOD: </div>
-          <div class="value"><%=unicorn.favorite_food%></div>
-          <div class="property">LOCATION: </div>
-            <select id='<%=`${unicorn.id}`%>' class='location value'>
-              <%- locations.map(value => {
-                let selected = (unicorn.location === value) ? 'selected' : '';
-                return `<option value='${value}' ${selected}>${value}</option>`;
-                }).join(' ');
-              %>
-            </select>
-          <div id="updated_<%=`${unicorn.id}`%>" class="updated">&nbsp;</div>
+        <div class="grid_4">
+          <span class="unicorn_name"><%=unicorn.name%></span>
+          <div class="unicorn">
+            <label>Color</label>
+            <span><%=unicorn.color%></span>
+            
+            <label>Favorite food</label>
+            <span><%=unicorn.favorite_food%></span>
+
+            <label>Location</label>
+            <select id='<%=`${unicorn.id}`%>' class="location">
+                <%- locations.map(value => {
+                  let selected = (unicorn.location === value) ? 'selected' : '';
+                  return `<option value='${value}' ${selected}>${value}</option>`;
+                  }).join(' ');
+                %>
+              </select>
+            </div>
+              <span id="updated_<%=`${unicorn.id}`%>" class="comments">&nbsp;</span>
         </div>
       <% } %>
     </div>

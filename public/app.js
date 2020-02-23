@@ -12,10 +12,11 @@ function sendLocation(event) {
     method: 'PUT',
     data: { 'location': location, 'id' : id }
   };
+  
 
-  $.ajax(`/updateLocation`, ajaxSettings)
-    .then(() => {
-      $(`#updated_${id}`).html("Location changed to '" + location + "'.");  
+  $.ajax(`/location`, ajaxSettings)
+    .then((data) => {
+      $(`#updated_${id}`).html("Location changed to '" + data.location + "'.");  
     });
 }
 
